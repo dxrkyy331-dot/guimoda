@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "guimod",
+  "version": "1.0.0",
+  "name": "Moje GUI",
+  "description": "Menu GUI otwierane prawym Shiftem.",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["pl.example.guimod.GuiModClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
