@@ -1,15 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "avatrix",
+  "id": "basehunt-addon",
   "version": "${version}",
-  "name": "Avatrix",
-  "description": "Client GUI with Target ESP (line of sight only) and color settings.",
+  "name": "Base Hunt",
+  "description": "Meteor Client addon: chunk base finders and storage tracers.",
+  "authors": ["You"],
+  "license": "MIT",
   "environment": "client",
-  "entrypoints": { "client": ["dev.avatrix.AvatrixClient"] },
+  "entrypoints": {
+    "meteor": ["com.example.basehunt.BaseHuntAddon"]
+  },
   "depends": {
-    "fabricloader": ">=0.16.0",
-    "minecraft": "~1.21.4",
     "java": ">=21",
-    "fabric-api": "*"
+    "minecraft": "${mc_version}",
+    "meteor-client": "*"
   }
 }

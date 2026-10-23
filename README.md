@@ -1,13 +1,26 @@
-# Avatrix (Fabric 1.21.4)
+# Base Hunt (Meteor Client addon)
 
-Client-side Fabric mod: click GUI (Right Shift), Target ESP (line of sight only), color settings, local configs.
+Adds a **Base Hunt** tab to the Meteor GUI:
 
-## Get the .jar
-1. Push this folder to a GitHub repo.
-2. Open the Actions tab, run "build" (it also runs on every push).
-3. Download the `avatrix-jar` artifact. Put the .jar in `.minecraft/mods` with Fabric Loader 0.16+ and Fabric API for 1.21.4.
+- `amethyst-chunk-finder` – chunks with many large amethyst buds
+- `placed-block-finder` – chunks with crafting tables, furnaces, beds, etc.
+- `light-source-finder` – chunks with many torches/lanterns
+- `storage-tracers` – pick which storage types to box/trace
+
+Use Meteor's built-in **Freecam** alongside these.
+
+## Build on GitHub
+1. Create a repo and push this folder.
+2. Open the **Actions** tab. The *Build* workflow runs on every push.
+3. Download the jar from the run's **Artifacts** (`basehunt-addon`).
+4. Put the jar in `.minecraft/mods` next to Meteor Client and Fabric Loader.
 
 ## Build locally
-Install Java 21 and Gradle 8.12+, then run `gradle build`. The jar ends up in `build/libs/`.
+`gradle build` (Java 21, Gradle 8.11+). Jar appears in `build/libs/`.
 
-Configs are saved in `.minecraft/config/avatrix/configs/`.
+## Versions
+`gradle.properties` targets Minecraft 1.21.4. To use another version, change
+`minecraft_version`, `yarn_mappings`, `loader_version` and `meteor_version` to match your Meteor build.
+Some Meteor API names (e.g. `ChunkDataEvent.chunk`, `RenderUtils.center`) shift between releases.
+
+Check server rules before using ESP-style mods.
